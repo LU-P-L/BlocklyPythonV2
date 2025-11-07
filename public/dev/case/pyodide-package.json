@@ -1,0 +1,22 @@
+[
+  {"name":"matplotlib","channel":"default channel"},
+  {"name":"scipy","channel":"default channel"},
+  {"name":"pandas","channel":"default channel"},
+  {"name":"opencv-python","channel":"default channel"},
+  {"name":"turtle", "channel":  "http://localhost:4000/pyodide/browser_turtle-0.0.1-py3-none-any.whl"},
+  {"name":"tensorflow", "channel":  "http://localhost:4000/pyodide/browser_tensorflow-0.0.1-py3-none-any.whl"},
+  {"name":"pydantic_core", "channel":  "http://localhost:4000/pyodide/pydantic_core-2.30.0-cp312-cp312-emscripten_3_1_58_wasm32.whl"},
+  {"name":"annotated_types", "channel":  "http://localhost:4000/pyodide/annotated_types-0.7.0-py3-none-any.whl"},
+  {"name":"typing_extensions", "channel":  "http://localhost:4000/pyodide/typing_extensions-4.12.2-py3-none-any.whl"},
+  {"name":"pydantic", "channel":  "http://localhost:4000/pyodide/pydantic-2.10.6-py3-none-any.whl"},
+  {"name":"overrides", "channel":  "http://localhost:4000/pyodide/overrides-7.7.0-py3-none-any.whl"},
+  {"name":"tenacity", "channel":  "http://localhost:4000/pyodide/tenacity-9.0.0-py3-none-any.whl"},
+  {"name":"httpx", "channel":  "http://localhost:4000/pyodide/httpx-0.28.1-py3-none-any.whl"},
+  {"name":"idna", "channel":  "http://localhost:4000/pyodide/idna-3.10-py3-none-any.whl"},
+  {"name":"onnx", "channel":  "http://localhost:4000/pyodide/onnx-1.13.0-cp310-cp310-emscripten_3_1_27_wasm32.whl"},
+  {"name":"protobuf", "channel":  "http://localhost:4000/pyodide/protobuf-6.30.0-py3-none-any.whl"},
+  {"name":"dotenv", "channel":  "http://localhost:4000/pyodide/dotenv-0.9.9-py2.py3-none-any.whl"},
+  {"name":"chromadb", "channel":  "http://localhost:4000/pyodide/chromadb-0.6.3-py3-none-any.whl"},
+  {"name":"pymilvus", "channel":  "http://localhost:4000/pyodide/pymilvus-2.5.4-py3-none-any.whl"},
+  {"name":"milvus_lite", "channel":  "http://localhost:4000/pyodide/milvus_lite-2.4.11-py3-none-macosx_11_0_arm64.whl"}
+]

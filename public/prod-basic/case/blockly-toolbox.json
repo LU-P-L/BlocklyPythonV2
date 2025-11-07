@@ -1,0 +1,611 @@
+{
+  "kind": "categoryToolbox",
+  "contents": [
+    {
+      "kind": "category",
+      "name": "库专项",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "Matplotlib",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "python_example_matplotlib_1"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Turtle",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "import_turtle"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_move"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_direction"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_pen_operation"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_visible"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_fill"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_pensize"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_seth"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_setpos"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_color"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_fill_color"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_circle"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_dot"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_polygon"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_speed"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_write"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_shape"
+            },
+            {
+              "kind": "block",
+              "type": "koch_line"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "category",
+      "name": "Python Basic",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "类型",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "ast_type_conversion"
+            },
+            {
+              "kind": "block",
+              "type": "lists_create_empty"
+            },
+            {
+              "kind": "block",
+              "type": "lists_repeat"
+            },
+            {
+              "kind": "block",
+              "type": "lists_reverse"
+            },
+            {
+              "kind": "block",
+              "type": "lists_isEmpty"
+            },
+            {
+              "kind": "block",
+              "type": "lists_length"
+            },
+            {
+              "kind": "block",
+              "type": "lists_create_with"
+            },
+            {
+              "kind": "block",
+              "type": "lists_indexOf"
+            },
+            {
+              "kind": "block",
+              "type": "lists_getIndex"
+            },
+            {
+              "kind": "block",
+              "type": "lists_setIndex"
+            },
+            {
+              "kind": "block",
+              "type": "lists_getSublist"
+            },
+            {
+              "kind": "block",
+              "type": "lists_sort"
+            },
+            {
+              "kind": "block",
+              "type": "lists_split"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "运算",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "ast_bin_op"
+            },
+            {
+              "kind": "block",
+              "type": "ast_bool_op"
+            },
+            {
+              "kind": "block",
+              "type": "ast_compare"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "控制结构",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "ast_controls_for"
+            },
+            {
+              "kind": "block",
+              "type": "controls_if"
+            },
+            {
+              "kind": "block",
+              "type": "ast_if"
+            },
+            {
+              "kind": "block",
+              "type": "ast_for_stmt"
+            },
+            {
+              "kind": "block",
+              "type": "controls_for"
+            },
+            {
+              "kind": "block",
+              "type": "ast_break"
+            },
+            {
+              "name": "continue",
+              "kind": "block",
+              "type": "ast_continue"
+            },
+            {
+              "kind": "block",
+              "type": "ast_pass"
+            },
+            {
+              "kind": "block",
+              "type": "ast_while"
+            },
+            {
+              "kind": "block",
+              "type": "ast_with"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "类的定义与使用",
+          "custom": "CLASS_PALETTE"
+        },
+        {
+          "kind": "category",
+          "name": "模块导入",
+          "custom": "IMPORT"
+        },
+        {
+          "kind": "category",
+          "name": "模块导入PYODIDE",
+          "custom": "IMPORT_PYODIDE"
+        },
+        {
+          "kind": "category",
+          "name": "输入输出",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "raw_input"
+            },
+            {
+              "kind": "block",
+              "type": "int_input"
+            },
+            {
+              "kind": "block",
+              "type": "input_with_info"
+            },
+            {
+              "kind": "block",
+              "type": "print"
+            },
+            {
+              "kind": "block",
+              "type": "print_end_with"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "数据类型",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "ast_NameConstantBoolean"
+            },
+            {
+              "kind": "block",
+              "type": "ast_number"
+            },
+            {
+              "kind": "block",
+              "type": "ast_NameConstantNone"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str_multiline"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str_docstring"
+            },
+            {
+              "kind": "block",
+              "type": "ast_text_join"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str_char"
+            },
+            {
+              "kind": "block",
+              "type": "ast_list"
+            },
+            {
+              "kind": "block",
+              "type": "list_append"
+            },
+            {
+              "kind": "block",
+              "type": "list_extend"
+            },
+            {
+              "kind": "block",
+              "type": "list_clear"
+            },
+            {
+              "kind": "block",
+              "type": "ast_tuple"
+            },
+            {
+              "kind": "block",
+              "type": "ast_set"
+            },
+            {
+              "kind": "block",
+              "type": "set_option"
+            },
+            {
+              "kind": "block",
+              "type": "ast_dict"
+            },
+            {
+              "kind": "block",
+              "type": "ast_dict_with_item"
+            },
+            {
+              "kind": "block",
+              "type": "dict_option"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "基础 python 块",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "ast_assert"
+            },
+            {
+              "kind": "block",
+              "type": "ast_assign"
+            },
+            {
+              "kind": "block",
+              "type": "ast_bin_op"
+            },
+            {
+              "kind": "block",
+              "type": "ast_bool_op"
+            },
+            {
+              "kind": "block",
+              "type": "ast_break"
+            },
+            {
+              "kind": "block",
+              "type": "ast_class_def"
+            },
+            {
+              "kind": "block",
+              "type": "ast_compare"
+            },
+            {
+              "kind": "block",
+              "type": "ast_continue"
+            },
+            {
+              "kind": "block",
+              "type": "ast_dict"
+            },
+            {
+              "kind": "block",
+              "type": "ast_dict_with_item"
+            },
+            {
+              "kind": "block",
+              "type": "dict_option"
+            },
+            {
+              "kind": "block",
+              "type": "ast_expr"
+            },
+            {
+              "kind": "block",
+              "type": "ast_for_stmt"
+            },
+            {
+              "kind": "block",
+              "type": "ast_function_def"
+            },
+            {
+              "kind": "block",
+              "type": "ast_if"
+            },
+            {
+              "kind": "block",
+              "type": "ast_import_content"
+            },
+            {
+              "kind": "block",
+              "type": "ast_import"
+            },
+            {
+              "kind": "block",
+              "type": "ast_import_content"
+            },
+            {
+              "kind": "block",
+              "type": "ast_list"
+            },
+            {
+              "kind": "block",
+              "type": "list_append"
+            },
+            {
+              "kind": "block",
+              "type": "list_extend"
+            },
+            {
+              "kind": "block",
+              "type": "list_clear"
+            },
+            {
+              "kind": "block",
+              "type": "ast_NameConstantBoolean"
+            },
+            {
+              "kind": "block",
+              "type": "ast_NameConstantNone"
+            },
+            {
+              "kind": "block",
+              "type": "ast_nonlocal"
+            },
+            {
+              "kind": "block",
+              "type": "ast_number"
+            },
+            {
+              "kind": "block",
+              "type": "ast_pass"
+            },
+            {
+              "kind": "block",
+              "type": "ast_raw"
+            },
+            {
+              "kind": "block",
+              "type": "ast_return"
+            },
+            {
+              "kind": "block",
+              "type": "ast_return_full"
+            },
+            {
+              "kind": "block",
+              "type": "ast_set"
+            },
+            {
+              "kind": "block",
+              "type": "set_option"
+            },
+            {
+              "kind": "block",
+              "type": "ast_starred"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str"
+            },
+            {
+              "kind": "block",
+              "type": "ast_image"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str_multiline"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str_docstring"
+            },
+            {
+              "kind": "block",
+              "type": "ast_sub_script"
+            },
+            {
+              "kind": "block",
+              "type": "ast_text_join"
+            },
+            {
+              "kind": "block",
+              "type": "ast_try"
+            },
+            {
+              "kind": "block",
+              "type": "ast_tuple"
+            },
+            {
+              "kind": "block",
+              "type": "ast_unary_op_uadd"
+            },
+            {
+              "kind": "block",
+              "type": "ast_unary_op_usub"
+            },
+            {
+              "kind": "block",
+              "type": "ast_unary_op_not"
+            },
+            {
+              "kind": "block",
+              "type": "ast_unary_op_invert"
+            },
+            {
+              "kind": "block",
+              "type": "ast_while"
+            },
+            {
+              "kind": "block",
+              "type": "ast_with"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "基础 python 函数",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "id"
+            },
+            {
+              "kind": "sep",
+              "cssConfig": {
+                "container": "yourClassName"
+              }
+            },
+            {
+              "kind": "block",
+              "type": "get_id"
+            },
+            {
+              "kind": "block",
+              "type": "get_type"
+            },
+            {
+              "kind": "block",
+              "type": "type"
+            },
+            {
+              "kind": "block",
+              "type": "print_end_with"
+            },
+            {
+              "kind": "block",
+              "type": "print"
+            },
+            {
+              "kind": "block",
+              "type": "raw_input"
+            },
+            {
+              "kind": "block",
+              "type": "int_input"
+            },
+            {
+              "kind": "block",
+              "type": "input_with_info"
+            },
+            {
+              "kind": "block",
+              "type": "int"
+            },
+            {
+              "kind": "block",
+              "type": "str"
+            },
+            {
+              "kind": "block",
+              "type": "range_simply"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "变量",
+          "custom": "VARIABLE"
+        },
+        {
+          "kind": "category",
+          "name": "自定义函数",
+          "custom": "PROCEDURE"
+        }
+      ]
+    }
+  ]
+}

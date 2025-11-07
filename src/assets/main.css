@@ -1,0 +1,80 @@
+@import './base.css';
+
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+#app {
+  /* max-width: 1280px; */
+  height: 100%;
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    /* display: flex; */
+    /* place-items: center; */
+  }
+
+  #app {
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
+    /* padding: 0 2rem; */
+  }
+}
+
+/*!* Makes our label white. *!*/
+/*.blocklyTreeLabel {*/
+/*  color: #fff;*/
+/*}*/
+/*!* Adds padding around the group of categories and separators. *!*/
+/*.blocklyToolboxContents {*/
+/*  padding: 0.5em;*/
+/*}*/
+/*!* Adds space between the categories, rounds the corners and adds space around the label. *!*/
+/*.blocklyTreeRow {*/
+/*  padding: 3px;*/
+/*  margin-bottom: 0.5em;*/
+/*  border-radius: 4px;*/
+/*}*/
+/*!* Changes color of the icon to white. *!*/
+/*.customIcon {*/
+/*  color: #fff;*/
+/*}*/
+/*!* Stacks the icon on top of the label. *!*/
+/*.blocklyTreeRowContentContainer {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*}*/
+/*.blocklyTreeRow {*/
+/*  height: initial;*/
+/*}*/
+
+#tfjs-visor-container > .visor {
+  position: relative;;
+  width: 100%;
+}
+
+#tfjs-visor-container > .visor > .visor-controls {
+  display: none;
+}

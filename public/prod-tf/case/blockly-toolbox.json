@@ -1,0 +1,879 @@
+{
+  "kind": "categoryToolbox",
+  "contents": [
+    {
+      "kind": "category",
+      "name": "TF专项",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "TF Basic",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "tf_tensor__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_scalar__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_tensor1d__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_tensor2d__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_tensor3d__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_tensor4d__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_tensor5d__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_layers_dense"
+            },
+            {
+              "kind": "block",
+              "type": "tf_dataset_mnist_data_loader"
+            },
+            {
+              "kind": "block",
+              "type": "tf_dataset_mnist_data_load"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "TF Basic Test",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "print",
+              "inputs": {
+                "TARGET": {
+                  "block": {
+                    "type": "tf_tensor__simple",
+                    "inputs": {
+                      "values": {
+                        "block": {
+                          "type": "ast_list",
+                          "extraState": {
+                            "items_count": 3
+                          },
+                          "inline": true,
+                          "inputs": {
+                            "ITEM0": {
+                              "block": {
+                                "type": "ast_number",
+                                "fields": {
+                                  "Number": 1
+                                }
+                              }
+                            },
+                            "ITEM1": {
+                              "block": {
+                                "type": "ast_number",
+                                "fields": {
+                                  "Number": 2
+                                }
+                              }
+                            },
+                            "ITEM2": {
+                              "block": {
+                                "type": "ast_number",
+                                "fields": {
+                                  "Number": 3
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "kind": "block",
+              "type": "tf_layers_dense"
+            },
+            {
+              "kind": "block",
+              "type": "tf_dataset_mnist_data_loader"
+            },
+            {
+              "kind": "block",
+              "type": "tf_dataset_mnist_data_load"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "TF 样例",
+          "contents": [
+            {
+              "kind": "category",
+              "name": "TF Example",
+              "contents": [
+                {
+                  "kind": "sep"
+                },
+                {
+                  "kind": "label",
+                  "text": "手写体识别 成品"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v3_loader2",
+                  "next": {
+                    "block": {
+                      "type": "tf_example_mnist_v3_show_data",
+                      "next": {
+                        "block": {
+                          "type": "tf_example_mnist_v2_create_model",
+                          "next": {
+                            "block": {
+                              "type": "tf_example_mnist_v2_show_model_summary",
+                              "next": {
+                                "block": {
+                                  "type": "tf_example_mnist_v3_train_model",
+                                  "next": {
+                                    "block": {
+                                      "type": "tf_example_mnist_v3_model_evaluation",
+                                      "inputs": {
+                                        "dataSize": {
+                                          "block": {
+                                            "type": "ast_number",
+                                            "fields": {
+                                              "Number": 10
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_import_tf",
+                  "next": {
+                    "block": {
+                      "type": "variables_set",
+                      "fields": {
+                        "VAR": {
+                          "name": "data"
+                        }
+                      },
+                      "inputs": {
+                        "VALUE": {
+                          "block": {
+                            "type": "tf_dataset_mnist_data_loader"
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "tf_dataset_mnist_data_load",
+                          "fields": {
+                            "VAR": {
+                              "name": "data"
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "tf_example_mnist_v2_show_data",
+                              "next": {
+                                "block": {
+                                  "type": "tf_example_mnist_v2_create_model2",
+                                  "inputs": {
+                                    "kernelSize": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 5
+                                        }
+                                      }
+                                    },
+                                    "filter": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 8
+                                        }
+                                      }
+                                    },
+                                    "strides": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 1
+                                        }
+                                      }
+                                    },
+                                    "activation": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "relu"
+                                        }
+                                      }
+                                    },
+                                    "kernelInitializer": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "varianceScaling"
+                                        }
+                                      }
+                                    },
+                                    "optimizer": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "adam"
+                                        }
+                                      }
+                                    },
+                                    "loss": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "categoricalCrossentropy"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "tf_example_mnist_v2_show_model_summary",
+                                      "next": {
+                                        "block": {
+                                          "type": "tf_example_mnist_v2_train_model2",
+                                          "inputs": {
+                                            "batch": {
+                                              "block": {
+                                                "type": "math_number",
+                                                "fields": {
+                                                  "NUM": 512
+                                                }
+                                              }
+                                            },
+                                            "epochs": {
+                                              "block": {
+                                                "type": "math_number",
+                                                "fields": {
+                                                  "NUM": 10
+                                                }
+                                              }
+                                            },
+                                            "trainDataSize": {
+                                              "block": {
+                                                "type": "math_number",
+                                                "fields": {
+                                                  "NUM": 5500
+                                                }
+                                              }
+                                            },
+                                            "testDataSize": {
+                                              "block": {
+                                                "type": "math_number",
+                                                "fields": {
+                                                  "NUM": 1000
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "tf_example_mnist_v2_model_evaluation",
+                                              "inputs": {
+                                                "dataSize": {
+                                                  "block": {
+                                                    "type": "ast_number",
+                                                    "fields": {
+                                                      "Number": 10
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_import_tf",
+                  "next": {
+                    "block": {
+                      "type": "variables_set",
+                      "fields": {
+                        "VAR": {
+                          "name": "data"
+                        }
+                      },
+                      "inputs": {
+                        "VALUE": {
+                          "block": {
+                            "type": "tf_dataset_mnist_data_loader"
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "tf_dataset_mnist_data_load",
+                          "fields": {
+                            "VAR": {
+                              "name": "data"
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "tf_example_mnist_v2_show_data",
+                              "next": {
+                                "block": {
+                                  "type": "tf_example_mnist_v2_create_model",
+                                  "next": {
+                                    "block": {
+                                      "type": "tf_example_mnist_v2_show_model_summary",
+                                      "next": {
+                                        "block": {
+                                          "type": "tf_example_mnist_v2_train_model",
+                                          "next": {
+                                            "block": {
+                                              "type": "tf_example_mnist_v2_model_evaluation",
+                                              "inputs": {
+                                                "dataSize": {
+                                                  "block": {
+                                                    "type": "ast_number",
+                                                    "fields": {
+                                                      "Number": 10
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v1"
+                },
+                {
+                  "kind": "label",
+                  "text": "手写体识别 原子"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v3_loader1"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v3_loader2"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v3_show_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_import_tf"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_load_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_show_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_create_model"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_show_model_summary"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_model_evaluation"
+                }
+              ]
+            },
+            {
+              "kind": "category",
+              "name": "fashion_mnist",
+              "contents": [
+                {
+                  "kind": "block",
+                  "type": "import_tf_base2",
+                  "next": {
+                    "block": {
+                      "type": "import_fashion_mnist_data",
+                      "next": {
+                        "block": {
+                          "type": "load_fashion_mnist_data",
+                          "next": {
+                            "block": {
+                              "type": "deal_fashion_mnist_data",
+                              "next": {
+                                "block": {
+                                  "type": "create_fashion_mnist_moudle",
+                                  "inputs": {
+                                    "kernelSize": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 128
+                                        }
+                                      }
+                                    },
+                                    "activation": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "relu"
+                                        }
+                                      }
+                                    },
+                                    "DenseSize": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 10
+                                        }
+                                      }
+                                    },
+                                    "optimizer": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "adam"
+                                        }
+                                      }
+                                    },
+                                    "loss": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "SparseCategoricalCrossentropy"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "tf_fashion_mnist_train",
+                                      "next": {
+                                        "block": {
+                                          "type": "tf_fashion_mnist_ssessment",
+                                          "next": {
+                                            "block": {
+                                              "type": "tf_fashion_mnist_Forecast"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "category",
+              "name": "fashion_mnist2",
+              "contents": [
+                {
+                  "kind": "block",
+                  "type": "import_tf_base22",
+                  "next": {
+                    "block": {
+                      "type": "import_fashion_mnist_data2",
+                      "next": {
+                        "block": {
+                          "type": "load_fashion_mnist_data2",
+                          "next": {
+                            "block": {
+                              "type": "deal_fashion_mnist_data2",
+                              "next": {
+                                "block": {
+                                  "type": "create_fashion_mnist_moudle2",
+                                  "inputs": {
+                                    "kernelSize": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 128
+                                        }
+                                      }
+                                    },
+                                    "activation": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "relu"
+                                        }
+                                      }
+                                    },
+                                    "DenseSize": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 10
+                                        }
+                                      }
+                                    },
+                                    "optimizer": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "adam"
+                                        }
+                                      }
+                                    },
+                                    "loss": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "SparseCategoricalCrossentropy"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "tf_fashion_mnist_train2",
+                                      "next": {
+                                        "block": {
+                                          "type": "tf_fashion_mnist_ssessment2",
+                                          "next": {
+                                            "block": {
+                                              "type": "tf_fashion_mnist_Forecast2"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "category",
+              "name": "Text_classifi",
+              "contents": [
+                {
+                  "kind": "block",
+                  "type": "import_tf_base_text",
+                  "next": {
+                    "block": {
+                      "type": "import_text_classifi_data",
+                      "next": {
+                        "block": {
+                          "type": "create_database",
+                          "next": {
+                            "block": {
+                              "type": "Text_sta",
+                              "next": {
+                                "block": {
+                                  "type": "Text_Vec",
+                                  "next": {
+                                    "block": {
+                                      "type": "Adjust_Vec",
+                                      "next": {
+                                        "block": {
+                                          "type": "Apply_Vec",
+                                          "next": {
+                                            "block": {
+                                              "type": "create_movie_moudle",
+                                              "inputs": {
+                                                "embedding": {
+                                                  "block": {
+                                                    "type": "math_number",
+                                                    "fields": {
+                                                      "NUM": 16
+                                                    }
+                                                  }
+                                                },
+                                                "Dropout": {
+                                                  "block": {
+                                                    "type": "math_number",
+                                                    "fields": {
+                                                      "NUM": 0.2
+                                                    }
+                                                  }
+                                                },
+                                                "optimizer": {
+                                                  "block": {
+                                                    "type": "ast_str",
+                                                    "fields": {
+                                                      "TEXT": "adam"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "train_movie_moudle",
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "assessment_movie_moudle",
+                                                      "next": {
+                                                        "block": {
+                                                          "type": "create_chart"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "category",
+              "name": "linear regression",
+              "contents": [
+                {
+                  "kind": "block",
+                  "type": "import_tf_module"
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_get_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_show_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_create_model",
+                  "inputs": {
+                    "input_units": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 0
+                        }
+                      }
+                    },
+                    "input_useBias": {
+                      "shadow": {
+                        "type": "logic_boolean",
+                        "fields": {
+                          "NUM": true
+                        }
+                      }
+                    },
+                    "hidden_units": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 0
+                        }
+                      }
+                    },
+                    "hidden_useBias": {
+                      "shadow": {
+                        "type": "logic_boolean",
+                        "fields": {
+                          "NUM": true
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_model_summary"
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_convert_to_tensor"
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_train_model",
+                  "inputs": {
+                    "batchSize": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 0
+                        }
+                      }
+                    },
+                    "epochs": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 0
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_test_model"
+                }
+              ]
+            },
+            {
+              "kind": "category",
+              "name": "rnn",
+              "contents": [
+                {
+                  "kind": "block",
+                  "type": "rnn_import_tf"
+                },
+                {
+                  "kind": "block",
+                  "type": "rnn_get_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "rnn_handle_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "rnn_create_model",
+                  "inputs": {
+                    "units": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 128
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "kind": "block",
+                  "type": "rnn_train_model",
+                  "inputs": {
+                    "epochs": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 100
+                        }
+                      }
+                    },
+                    "batchSize": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 128
+                        }
+                      }
+                    },
+                    "testSampleNum": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 20
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "TF 样例",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "tf_exp_qna_model"
+            },
+            {
+              "kind": "block",
+              "type": "tf_exp_gemma2b_model"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

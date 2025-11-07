@@ -1,0 +1,5 @@
+[
+  {"name":"numpy","channel":"default channel"},
+  {"name":"scikit_learn","channel":"default channel"},
+  {"name":"tensorflow", "channel":  "http://localhost:5173/pyodide/browser_tensorflow-0.0.1-py3-none-any.whl"}
+]

@@ -1,0 +1,55 @@
+{
+    "version": "v2",
+    "title": "计小白学编程",
+    "author": "负责人: 华南理工大学-李粤; 开发人员: ChrisJaunes、wxp",
+    "description": "计小白学编程-标准案例",
+    "resource": [
+        {
+            "filename": "blockly-workspace.json",
+            "zip_type": "string",
+            "loader": "blockly-workspace-json"
+        },
+        {
+            "filename": "pyodide-std-input.txt",
+            "zip_type": "string",
+            "loader": "pyodide-std-input"
+        },
+        {
+            "filename": "pyodide-package.json",
+            "zip_type": "string",
+            "loader": "pyodide-package-json"
+        },
+        {
+            "filename": "case-introduction.txt",
+            "zip_type": "string",
+            "loader": "case-introduction"
+        },
+        {
+            "filename": "pyodide-pre-prog.txt",
+            "zip_type": "string",
+            "loader": "pyodide-pre-prog"
+        }
+    ],
+    "init": [
+        {
+            "filename": "blockly-toolbox.json",
+            "loader": "blockly-toolbox-json"
+        },
+        {
+            "filename": "blockly-workspace.json",
+            "loader": "blockly-workspace-json"
+        },
+        {
+            "filename": "pyodide-std-input.txt",
+            "loader": "pyodide-std-input"
+        },
+        {
+            "filename": "case-introduction.txt",
+            "loader": "case-introduction"
+        },
+        {
+            "filename": "pyodide-pre-prog.txt",
+            "loader": "pyodide-pre-prog"
+        }
+    ]
+}

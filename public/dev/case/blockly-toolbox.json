@@ -1,0 +1,2645 @@
+{
+  "kind": "categoryToolbox",
+  "contents": [
+    {
+      "kind": "category",
+      "name": "HF专项",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "目标检测",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "od_select_image"
+            },
+            {
+              "kind": "block",
+              "type": "od_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "od_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "od_detect"
+            },
+            {
+              "kind": "block",
+              "type": "od_draw_result"
+            },
+            {
+              "kind": "block",
+              "type": "od_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "图像分类",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "ic_select_image"
+            },
+            {
+              "kind": "block",
+              "type": "ic_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "ic_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "ic_classify"
+            },
+            {
+              "kind": "block",
+              "type": "ic_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "深度估计",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "depth_select_image"
+            },
+            {
+              "kind": "block",
+              "type": "depth_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "depth_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "depth_estimate"
+            },
+            {
+              "kind": "block",
+              "type": "depth_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category", 
+          "name": "图像描述",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "description_select_image"
+            },
+            {
+              "kind": "block",
+              "type": "description_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "description_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "description_generate"
+            },
+            {
+              "kind": "block",
+              "type": "description_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "图像特征提取",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "feature_select_image"
+            },
+            {
+              "kind": "block",
+              "type": "feature_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "feature_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "feature_extract"
+            },
+            {
+              "kind": "block",
+              "type": "feature_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "图像零样本分类",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "image_zeroshot_select_image"
+            },
+            {
+              "kind": "block",
+              "type": "image_zeroshot_input_labels" 
+            },
+            {
+              "kind": "block",
+              "type": "image_zeroshot_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "image_zeroshot_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "image_zeroshot_classify"
+            },
+            {
+              "kind": "block",
+              "type": "image_zeroshot_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "问答",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "qa_input"
+            },
+            {
+              "kind": "block",
+              "type": "qa_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "qa_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "qa_answer"
+            },
+            {
+              "kind": "block",
+              "type": "qa_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "文本相似度",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "sentence_similarity_input"
+            },
+            {
+              "kind": "block",
+              "type": "sentence_similarity_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "sentence_similarity_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "sentence_similarity_compute"
+            },
+            {
+              "kind": "block",
+              "type": "sentence_similarity_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "情感分析",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "sentiment_analysis_input"
+            },
+            {
+              "kind": "block",
+              "type": "sentiment_analysis_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "sentiment_analysis_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "sentiment_analysis_analyze"
+            },
+            {
+              "kind": "block",
+              "type": "sentiment_analysis_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "文本续写",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "text_contin_input"
+            },
+            {
+              "kind": "block",
+              "type": "text_contin_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "text_contin_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "text_contin_params"
+            },
+            {
+              "kind": "block",
+              "type": "text_contin_generate"
+            },
+            {
+              "kind": "block",
+              "type": "text_contin_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "文本生成",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "text_gen_input"
+            },
+            {
+              "kind": "block",
+              "type": "text_gen_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "text_gen_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "text_gen_generate"
+            },
+            {
+              "kind": "block",
+              "type": "text_gen_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "翻译",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "translation_input"
+            },
+            {
+              "kind": "block",
+              "type": "translation_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "translation_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "translation_translate"
+            },
+            {
+              "kind": "block",
+              "type": "translation_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "文本总结",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "summarization_input"
+            },
+            {
+              "kind": "block",
+              "type": "summarization_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "summarization_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "summarization_generate"
+            },
+            {
+              "kind": "block",
+              "type": "summarization_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "零样本分类",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "zeroshot_input_text"
+            },
+            {
+              "kind": "block",
+              "type": "zeroshot_input_labels"
+            },
+            {
+              "kind": "block",
+              "type": "zeroshot_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "zeroshot_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "zeroshot_classify"
+            },
+            {
+              "kind": "block",
+              "type": "zeroshot_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "文本填充",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "fill_mask_input"
+            },
+            {
+              "kind": "block",
+              "type": "fill_mask_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "fill_mask_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "fill_mask_predict"
+            },
+            {
+              "kind": "block",
+              "type": "fill_mask_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "文本特征提取",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "feature_extraction_input"
+            },
+            {
+              "kind": "block",
+              "type": "feature_extraction_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "feature_extraction_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "feature_extraction_extract"
+            },
+            {
+              "kind": "block",
+              "type": "feature_extraction_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "代码生成",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "code_gen_input"
+            },
+            {
+              "kind": "block",
+              "type": "code_gen_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "code_gen_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "code_gen_generate"
+            },
+            {
+              "kind": "block",
+              "type": "code_gen_save_result"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "OCR",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "ocr_select_image"
+            },
+            {
+              "kind": "block", 
+              "type": "ocr_model_type"
+            },
+            {
+              "kind": "block",
+              "type": "ocr_load_model"
+            },
+            {
+              "kind": "block",
+              "type": "ocr_recognize"
+            },
+            {
+              "kind": "block",
+              "type": "ocr_save_result"
+            }
+          ]
+        }
+      ]
+    },
+    
+    {
+      "kind": "category",
+      "name": "库专项",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "Matplotlib",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "python_example_matplotlib_1"
+            },
+            {
+              "kind": "block",
+              "type": "import_turtle"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Turtle",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "import_turtle"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_hideturtle"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_move"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_direction"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_pen_operation"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_visible"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_fill"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_pensize"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_seth"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_setpos"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_color"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_fill_color"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_circle"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_dot"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_polygon"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_speed"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_write"
+            },
+            {
+              "kind": "block",
+              "type": "turtle_shape"
+            },
+            {
+              "kind": "block",
+              "type": "koch_line"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "category",
+      "name": "TF专项",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "TF Basic",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "tf_tensor__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_scalar__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_tensor1d__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_tensor2d__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_tensor3d__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_tensor4d__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_tensor5d__simple"
+            },
+            {
+              "kind": "block",
+              "type": "tf_sequential__empty"
+            },
+            {
+              "kind": "block",
+              "type": "tf_layers_dense"
+            },
+            {
+              "kind": "block",
+              "type": "tf_layers_conv2d"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "TF Basic Test",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "print",
+              "inputs": {
+                "TARGET": {
+                  "block": {
+                    "type": "tf_tensor__simple",
+                    "inputs": {
+                      "values": {
+                        "block": {
+                          "type": "ast_list",
+                          "extraState": {
+                            "items_count": 3
+                          },
+                          "inline": true,
+                          "inputs": {
+                            "ITEM0": {
+                              "block": {
+                                "type": "ast_number",
+                                "fields": {
+                                  "Number": 1
+                                }
+                              }
+                            },
+                            "ITEM1": {
+                              "block": {
+                                "type": "ast_number",
+                                "fields": {
+                                  "Number": 2
+                                }
+                              }
+                            },
+                            "ITEM2": {
+                              "block": {
+                                "type": "ast_number",
+                                "fields": {
+                                  "Number": 3
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "kind": "block",
+              "type": "tf_layers_dense"
+            },
+            {
+              "kind": "block",
+              "type": "tf_dataset_mnist_data_loader"
+            },
+            {
+              "kind": "block",
+              "type": "tf_dataset_mnist_data_load"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "TF 样例",
+          "contents": [
+            {
+              "kind": "category",
+              "name": "Mnist",
+              "contents": [
+                {
+                  "kind": "sep"
+                },
+                {
+                  "kind": "label",
+                  "text": "手写体识别 - (Author: ChrisJaunes)"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v3_loader2",
+                  "next": {
+                    "block": {
+                      "type": "tf_example_mnist_v3_show_data",
+                      "next": {
+                        "block": {
+                          "type": "tf_example_mnist_v2_create_model",
+                          "next": {
+                            "block": {
+                              "type": "tf_example_mnist_v2_show_model_summary",
+                              "next": {
+                                "block": {
+                                  "type": "tf_example_mnist_v3_train_model",
+                                  "next": {
+                                    "block": {
+                                      "type": "tf_example_mnist_v3_model_evaluation",
+                                      "inputs": {
+                                        "dataSize": {
+                                          "block": {
+                                            "type": "ast_number",
+                                            "fields": {
+                                              "Number": 10
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_import_tf",
+                  "next": {
+                    "block": {
+                      "type": "variables_set",
+                      "fields": {
+                        "VAR": {
+                          "name": "data"
+                        }
+                      },
+                      "inputs": {
+                        "VALUE": {
+                          "block": {
+                            "type": "tf_dataset_mnist_data_loader"
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "tf_dataset_mnist_data_load",
+                          "fields": {
+                            "VAR": {
+                              "name": "data"
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "tf_example_mnist_v2_show_data",
+                              "next": {
+                                "block": {
+                                  "type": "tf_example_mnist_v2_create_model2",
+                                  "inputs": {
+                                    "kernelSize": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 5
+                                        }
+                                      }
+                                    },
+                                    "filter": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 8
+                                        }
+                                      }
+                                    },
+                                    "strides": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 1
+                                        }
+                                      }
+                                    },
+                                    "activation": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "relu"
+                                        }
+                                      }
+                                    },
+                                    "kernelInitializer": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "varianceScaling"
+                                        }
+                                      }
+                                    },
+                                    "optimizer": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "adam"
+                                        }
+                                      }
+                                    },
+                                    "loss": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "categoricalCrossentropy"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "tf_example_mnist_v2_show_model_summary",
+                                      "next": {
+                                        "block": {
+                                          "type": "tf_example_mnist_v2_train_model2",
+                                          "inputs": {
+                                            "batch": {
+                                              "block": {
+                                                "type": "math_number",
+                                                "fields": {
+                                                  "NUM": 512
+                                                }
+                                              }
+                                            },
+                                            "epochs": {
+                                              "block": {
+                                                "type": "math_number",
+                                                "fields": {
+                                                  "NUM": 10
+                                                }
+                                              }
+                                            },
+                                            "trainDataSize": {
+                                              "block": {
+                                                "type": "math_number",
+                                                "fields": {
+                                                  "NUM": 5500
+                                                }
+                                              }
+                                            },
+                                            "testDataSize": {
+                                              "block": {
+                                                "type": "math_number",
+                                                "fields": {
+                                                  "NUM": 1000
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "tf_example_mnist_v2_model_evaluation",
+                                              "inputs": {
+                                                "dataSize": {
+                                                  "block": {
+                                                    "type": "ast_number",
+                                                    "fields": {
+                                                      "Number": 10
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_import_tf",
+                  "next": {
+                    "block": {
+                      "type": "variables_set",
+                      "fields": {
+                        "VAR": {
+                          "name": "data"
+                        }
+                      },
+                      "inputs": {
+                        "VALUE": {
+                          "block": {
+                            "type": "tf_dataset_mnist_data_loader"
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "tf_dataset_mnist_data_load",
+                          "fields": {
+                            "VAR": {
+                              "name": "data"
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "tf_example_mnist_v2_show_data",
+                              "next": {
+                                "block": {
+                                  "type": "tf_example_mnist_v2_create_model",
+                                  "next": {
+                                    "block": {
+                                      "type": "tf_example_mnist_v2_show_model_summary",
+                                      "next": {
+                                        "block": {
+                                          "type": "tf_example_mnist_v2_train_model",
+                                          "next": {
+                                            "block": {
+                                              "type": "tf_example_mnist_v2_model_evaluation",
+                                              "inputs": {
+                                                "dataSize": {
+                                                  "block": {
+                                                    "type": "ast_number",
+                                                    "fields": {
+                                                      "Number": 10
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v1"
+                },
+                {
+                  "kind": "label",
+                  "text": "手写体识别 原子"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v3_loader1"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v3_loader2"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v3_show_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_import_tf"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_load_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_show_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_create_model"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_show_model_summary"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_example_mnist_v2_model_evaluation"
+                }
+              ]
+            },
+            {
+              "kind": "category",
+              "name": "Fashion Mnist",
+              "contents": [
+                {
+                  "kind": "label",
+                  "text": "文本分类-(Author: mile-fever)"
+                },
+                {
+                  "kind": "label",
+                  "text": "20241110-不可用,需处理 (ChrisJaunes注)"
+                },
+                {
+                  "kind": "block",
+                  "type": "import_tf_base2",
+                  "next": {
+                    "block": {
+                      "type": "import_fashion_mnist_data",
+                      "next": {
+                        "block": {
+                          "type": "load_fashion_mnist_data",
+                          "next": {
+                            "block": {
+                              "type": "deal_fashion_mnist_data",
+                              "next": {
+                                "block": {
+                                  "type": "create_fashion_mnist_moudle",
+                                  "inputs": {
+                                    "kernelSize": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 128
+                                        }
+                                      }
+                                    },
+                                    "activation": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "relu"
+                                        }
+                                      }
+                                    },
+                                    "DenseSize": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 10
+                                        }
+                                      }
+                                    },
+                                    "optimizer": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "adam"
+                                        }
+                                      }
+                                    },
+                                    "loss": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "SparseCategoricalCrossentropy"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "tf_fashion_mnist_train",
+                                      "next": {
+                                        "block": {
+                                          "type": "tf_fashion_mnist_ssessment",
+                                          "next": {
+                                            "block": {
+                                              "type": "tf_fashion_mnist_Forecast"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "kind": "block",
+                  "type": "import_tf_base22",
+                  "next": {
+                    "block": {
+                      "type": "import_fashion_mnist_data2",
+                      "next": {
+                        "block": {
+                          "type": "load_fashion_mnist_data2",
+                          "next": {
+                            "block": {
+                              "type": "deal_fashion_mnist_data2",
+                              "next": {
+                                "block": {
+                                  "type": "create_fashion_mnist_moudle2",
+                                  "inputs": {
+                                    "kernelSize": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 128
+                                        }
+                                      }
+                                    },
+                                    "activation": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "relu"
+                                        }
+                                      }
+                                    },
+                                    "DenseSize": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 10
+                                        }
+                                      }
+                                    },
+                                    "optimizer": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "adam"
+                                        }
+                                      }
+                                    },
+                                    "loss": {
+                                      "block": {
+                                        "type": "ast_str",
+                                        "fields": {
+                                          "TEXT": "SparseCategoricalCrossentropy"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "tf_fashion_mnist_train2",
+                                      "next": {
+                                        "block": {
+                                          "type": "tf_fashion_mnist_ssessment2",
+                                          "next": {
+                                            "block": {
+                                              "type": "tf_fashion_mnist_Forecast2"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "category",
+              "name": "linear regression",
+              "contents": [
+                {
+                  "kind": "label",
+                  "text": "线性回归-(Author: wxp0502)"
+                },
+                {
+                  "kind": "label",
+                  "text": "20241110-不可用,需处理 (ChrisJaunes注)"
+                },
+                {
+                  "kind": "block",
+                  "type": "import_tf_module"
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_get_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_show_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_create_model",
+                  "inputs": {
+                    "input_units": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 0
+                        }
+                      }
+                    },
+                    "input_useBias": {
+                      "shadow": {
+                        "type": "logic_boolean",
+                        "fields": {
+                          "NUM": true
+                        }
+                      }
+                    },
+                    "hidden_units": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 0
+                        }
+                      }
+                    },
+                    "hidden_useBias": {
+                      "shadow": {
+                        "type": "logic_boolean",
+                        "fields": {
+                          "NUM": true
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_model_summary"
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_convert_to_tensor"
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_train_model",
+                  "inputs": {
+                    "batchSize": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 0
+                        }
+                      }
+                    },
+                    "epochs": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 0
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "kind": "block",
+                  "type": "linear_regression_test_model"
+                }
+              ]
+            },
+            {
+              "kind": "category",
+              "name": "qna",
+              "contents": [
+                {
+                  "kind": "block",
+                  "type": "tf_exp_qna_model"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_exp_gemma2b_model"
+                }
+              ]
+            },
+            {
+              "kind": "category",
+              "name": "reuters",
+              "contents": [
+                {
+                  "kind": "label",
+                  "text": "文本分类-(Author: ChrisJaunes)"
+                },
+                {
+                  "kind": "label",
+                  "text": "20241110-不可用,需处理 (ChrisJaunes注)"
+                },
+                {
+                  "kind": "block",
+                  "type": "tf_sample_model_reuters_v1"
+                }
+              ]
+            },
+            {
+              "kind": "category",
+              "name": "rnn",
+              "contents": [
+                {
+                  "kind": "label",
+                  "text": "文本分类-(Author: wxp0502)"
+                },
+                {
+                  "kind": "label",
+                  "text": "20241110-可执行,需处理 (ChrisJaunes注)"
+                },
+                {
+                  "kind": "block",
+                  "type": "rnn_import_tf"
+                },
+                {
+                  "kind": "block",
+                  "type": "rnn_get_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "rnn_handle_data"
+                },
+                {
+                  "kind": "block",
+                  "type": "rnn_create_model",
+                  "inputs": {
+                    "units": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 128
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "kind": "block",
+                  "type": "rnn_train_model",
+                  "inputs": {
+                    "epochs": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 100
+                        }
+                      }
+                    },
+                    "batchSize": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 128
+                        }
+                      }
+                    },
+                    "testSampleNum": {
+                      "shadow": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 20
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "category",
+              "name": "Text Classifi",
+              "contents": [
+                {
+                  "kind": "label",
+                  "text": "文本分类-(Author: mile-fever)"
+                },
+                {
+                  "kind": "label",
+                  "text": "20241110-不可用,需处理 (ChrisJaunes注)"
+                },
+                {
+                  "kind": "block",
+                  "type": "import_tf_base_text",
+                  "next": {
+                    "block": {
+                      "type": "import_text_classifi_data",
+                      "next": {
+                        "block": {
+                          "type": "create_database",
+                          "next": {
+                            "block": {
+                              "type": "Text_sta",
+                              "next": {
+                                "block": {
+                                  "type": "Text_Vec",
+                                  "next": {
+                                    "block": {
+                                      "type": "Adjust_Vec",
+                                      "next": {
+                                        "block": {
+                                          "type": "Apply_Vec",
+                                          "next": {
+                                            "block": {
+                                              "type": "create_movie_moudle",
+                                              "inputs": {
+                                                "embedding": {
+                                                  "block": {
+                                                    "type": "math_number",
+                                                    "fields": {
+                                                      "NUM": 16
+                                                    }
+                                                  }
+                                                },
+                                                "Dropout": {
+                                                  "block": {
+                                                    "type": "math_number",
+                                                    "fields": {
+                                                      "NUM": 0.2
+                                                    }
+                                                  }
+                                                },
+                                                "optimizer": {
+                                                  "block": {
+                                                    "type": "ast_str",
+                                                    "fields": {
+                                                      "TEXT": "adam"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "train_movie_moudle",
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "assessment_movie_moudle",
+                                                      "next": {
+                                                        "block": {
+                                                          "type": "create_chart"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "KNN",
+          "contents": [
+            {
+              "kind":"block",
+              "type": "distance_metric"
+            },
+            {
+              "kind": "block",
+              "type": "knn_set_train_dataset"
+            },
+            {
+              "kind": "block",
+              "type": "knn_classifier"
+            },
+            {
+              "kind": "block",
+              "type": "knn_set_test_dataset"
+            },
+            {
+              "kind": "block",
+              "type": "fit_knn_classifier"
+            },
+            {
+              "kind": "block",
+              "type": "knn_set_train_images"
+            },
+            {
+              "kind": "block",
+              "type": "knn_set_test_images"
+            },
+            {
+              "kind":"block",
+              "type": "feature_extraction_model"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "分类相关",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "set_train_dataset_img"
+            },
+            {
+              "kind": "block",
+              "type": "set_test_dataset_img"
+            },
+            {
+              "kind": "block",
+              "type": "create_model"
+            },
+            {
+              "kind": "block",
+              "type": "train_model_img"
+            },
+            {
+              "kind": "block",
+              "type": "use_model_img"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "回归相关",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "set_train_dataset"
+            },
+            {
+              "kind": "block",
+              "type": "set_test_dataset"
+            },
+            {
+              "kind": "block",
+              "type": "create_model"
+            },
+            {
+              "kind": "block",
+              "type": "train_model"
+            },
+            {
+              "kind": "block",
+              "type": "use_model"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "激活函数",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "activate_function"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "网络层",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "layer"
+            },
+            {
+              "kind": "block",
+              "type": "conv2d_layer"
+            },
+            {
+              "kind": "block",
+              "type": "max_pooling2d_layer"
+            },
+            {
+              "kind": "block",
+              "type": "flatten_layer"
+            },
+            {
+              "kind":  "block",
+              "type": "lstm_layer"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "损失函数",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "mse"
+            },
+            {
+              "kind": "block",
+              "type": "categorical_crossentropy"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "LSTM",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "lstm_set_params"
+            },
+            {
+              "kind": "block",
+              "type": "lstm_set_train_dataset"
+            },
+            {
+              "kind": "block",
+              "type": "lstm_set_test_dataset"
+            },
+            {
+              "kind": "block",
+              "type": "lstm_create_model"
+            },
+            {
+              "kind": "block",
+              "type": "lstm_train_model"
+            },
+            {
+              "kind": "block",
+              "type": "lstm_use_model"
+            }
+          ]
+
+        },
+        {
+          "kind": "category",
+          "name": "房价案例",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "set_train_dataset",
+              "next": {
+                "block": {
+                  "type": "set_test_dataset",
+                  
+                  "next": {
+                    "block": {
+                      "type": "create_model",
+                      "inputs": {
+                        "layers": {
+                          "block": {
+                            "type": "layer",
+                            "inputs": {
+                              "nural_count": {
+                                "block": {
+                                  "type": "ast_number",
+                                  "fields":{
+                                    "Number": 20
+                                  }
+                                }
+                              },
+                              "activate_fn": {
+                                "block": {
+                                  "type": "activate_function"
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "layer",
+                                "inputs": {
+                                  "nural_count": {
+                                    "block": {
+                                      "type": "ast_number",
+                                      "fields": {
+                                        "Number": 1
+                                      }
+                                    }
+                                  },
+                                  "activate_fn": {
+                                    "block": {
+                                      "type": "activate_function"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "loss": {
+                          "block": {
+                            "type": "mse"
+                          }
+                        },
+                        "batch": {
+                          "block": {
+                            "type": "ast_number",
+                            "fields": {
+                              "Number": 32
+                            }
+                          }
+                        },
+                        "epoch": {
+                          "block": {
+                            "type": "ast_number",
+                            "fields": {
+                              "Number": 50
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": { 
+                          "type": "train_model",
+                          "next": {
+                            "block": {
+                              "type": "use_model"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "CNN案例",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "set_train_dataset_img",
+              "next": {
+                "block": {
+                  "type": "set_test_dataset_img",
+                  
+                  "next": {
+                    "block": {
+                      "type": "create_model_img",
+                      "inputs": {
+                        "layers": {
+                          "block": {
+                            "type": "conv2d_layer",
+                            "inputs": {
+                              "kernel_size": {
+                                "block": {
+                                  "type": "ast_number",
+                                  "fields": {
+                                    "Number": 3
+                                  }
+                                }
+                              },
+                              "filters": {
+                                "block": {
+                                  "type": "ast_number",
+                                  "fields": {
+                                    "Number": 32
+                                  }
+                                }
+                              },
+                              "strides": {
+                                "block": {
+                                  "type": "ast_number",
+                                  "fields": {
+                                    "Number": 1
+                                  }
+                                }
+                              },
+                              "activate_fn": {
+                                "block": {
+                                  "type": "activate_function",
+                                  "fields": {
+                                    "TEXT": "relu"
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "max_pooling2d_layer",
+                                "inputs": {
+                                  "pool_size": {
+                                    "block": {
+                                      "type": "ast_number",
+                                      "fields": {
+                                        "Number": 2
+                                      }
+                                  
+                                    }
+                                  },
+                                  "strides": {
+                                    "block": {
+                                      "type": "ast_number",
+                                      "fields": {
+                                        "Number": 2
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "conv2d_layer",
+                                    "inputs": {
+                                      "kernel_size": {
+                                        "block": {
+                                          "type": "ast_number",
+                                          "fields": {
+                                            "Number": 3
+                                          }
+                                        }
+                                      },
+                                      "filters": {
+                                        "block": {
+                                          "type": "ast_number",
+                                          "fields": {
+                                            "Number": 64
+                                          }
+                                        }
+                                      },
+                                      "strides": {
+                                        "block": {
+                                          "type": "ast_number",
+                                          "fields": {
+                                            "Number": 1
+                                          }
+                                        }
+                                      },
+                                      "activate_fn": {
+                                        "block": {
+                                          "type": "activate_function",
+                                          "fields": {
+                                            "TEXT": "relu"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "next": {
+                                      "block": {
+                                        "type": "max_pooling2d_layer",
+                                        "inputs": {
+                                          "pool_size": {
+                                            "block": {
+                                              "type": "ast_number",
+                                              "fields": {
+                                                "Number": 2
+                                              }
+                                            }
+                                          },
+                                          "strides": {
+                                            "block": {
+                                              "type": "ast_number",
+                                              "fields": {
+                                                "Number": 2
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "next": {
+                                          "block": {
+                                            "type": "flatten_layer",
+                                            "next": {
+                                              "block": {
+                                                "type": "layer",
+                                                "inputs": {
+                                                  "nural_count": {
+                                                    "block": {
+                                                      "type": "ast_number",
+                                                      "fields": {
+                                                        "Number": 64
+                                                      }
+                                                    }
+                                                  },
+                                                  "activate_fn": {
+                                                    "block": {
+                                                      "type": "activate_function",
+                                                      "fields": {
+                                                        "TEXT": "relu"
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "next": {
+                                                  "block": {
+                                                    "type": "layer",
+                                                    "inputs": {
+                                                      "nural_count": {
+                                                        "block": {
+                                                          "type": "ast_number",
+                                                          "fields": {
+                                                            "Number": 2
+                                                          }
+                                                        }
+                                                      },
+                                                      "activate_fn": {
+                                                        "block": {
+                                                          "type": "activate_function",
+                                                          "fields": {
+                                                            "options": "softmax"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                            
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "loss": {
+                          "block": {
+                            "type": "categorical_crossentropy"
+                          }
+                        },
+                        "batch": {
+                          "block": {
+                            "type": "ast_number",
+                            "fields": {
+                              "Number": 128
+                            }
+                          }
+                        },
+                        "epoch": {
+                          "block": {
+                            "type": "ast_number",
+                            "fields": {
+                              "Number": 10
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": { 
+                          "type": "train_model_img",
+                          "next": {
+                            "block": {
+                              "type": "use_model_img"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "LSTM sine案例",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "lstm_set_params",
+              "inputs": {
+                "sample_len": {
+                  "block": {
+                    "type": "ast_number",
+                    "fields": {
+                      "Number": 64
+                    }
+                  }
+                },
+                "sample_step": {
+                  "block": {
+                    "type": "ast_number",
+                    "fields": {
+                      "Number": 10
+                    }
+                  }
+                },
+                "epoch": {
+                  "block": {
+                    "type": "ast_number",
+                    "fields": {
+                      "Number": 30
+                    }
+                  }
+                },
+                "examples_batch": {
+                  "block": {
+                    "type": "ast_number",
+                    "fields": {
+                      "Number": 256
+                    }
+                  }
+                },
+                "batch": {
+                  "block": {
+                    "type": "ast_number",
+                    "fields": {
+                      "Number": 32
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "lstm_set_train_dataset",
+                  "next": {
+                    "block": {
+                      "type": "lstm_set_test_dataset",
+                      "next": {
+                        "block": {
+                          "type": "lstm_create_model",
+                          "inputs": {
+                            "layers": {
+                              "block": {
+                                "type": "lstm_layer",
+                                "next": {
+                                  "block": {
+                                    "type": "layer",
+                                    "inputs": {
+                                      "nural_count": {
+                                        "block": {
+                                          "type": "ast_number",
+                                          "fields": {
+                                            "Number": 1
+                                          }
+                                        }
+                                      },
+                                      "activate_fn": {
+                                        "block": {
+                                          "type": "activate_function"
+                                        }
+                                      }
+                                    }
+
+                                  }
+                                }
+                              }
+                            },
+                            "loss": {
+                              "block": {
+                                "type": "mse"
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "lstm_train_model",
+                              "next": {
+                                "block": {
+                                  "type": "lstm_use_model",
+                                  "inputs":{
+                                    "length": {
+                                      "block": {
+                                        "type": "ast_number",
+                                        "fields": {
+                                          "Number": 100
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "category",
+      "name": "Python Basic",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "类型",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "ast_type_conversion"
+            },
+            {
+              "kind": "block",
+              "type": "lists_create_empty"
+            },
+            {
+              "kind": "block",
+              "type": "lists_repeat"
+            },
+            {
+              "kind": "block",
+              "type": "lists_reverse"
+            },
+            {
+              "kind": "block",
+              "type": "lists_isEmpty"
+            },
+            {
+              "kind": "block",
+              "type": "lists_length"
+            },
+            {
+              "kind": "block",
+              "type": "lists_create_with"
+            },
+            {
+              "kind": "block",
+              "type": "lists_indexOf"
+            },
+            {
+              "kind": "block",
+              "type": "lists_getIndex"
+            },
+            {
+              "kind": "block",
+              "type": "lists_setIndex"
+            },
+            {
+              "kind": "block",
+              "type": "lists_getSublist"
+            },
+            {
+              "kind": "block",
+              "type": "lists_sort"
+            },
+            {
+              "kind": "block",
+              "type": "lists_split"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "运算",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "ast_bin_op"
+            },
+            {
+              "kind": "block",
+              "type": "ast_bool_op"
+            },
+            {
+              "kind": "block",
+              "type": "ast_compare"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "控制结构",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "ast_controls_for"
+            },
+            {
+              "kind": "block",
+              "type": "controls_if"
+            },
+            {
+              "kind": "block",
+              "type": "ast_if"
+            },
+            {
+              "kind": "block",
+              "type": "ast_for_stmt"
+            },
+            {
+              "kind": "block",
+              "type": "controls_for"
+            },
+            {
+              "kind": "block",
+              "type": "ast_break"
+            },
+            {
+              "name": "continue",
+              "kind": "block",
+              "type": "ast_continue"
+            },
+            {
+              "kind": "block",
+              "type": "ast_pass"
+            },
+            {
+              "kind": "block",
+              "type": "ast_while"
+            },
+            {
+              "kind": "block",
+              "type": "ast_with"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "类的定义与使用",
+          "custom": "CLASS_PALETTE"
+        },
+        {
+          "kind": "category",
+          "name": "模块导入",
+          "custom": "IMPORT"
+        },
+        {
+          "kind": "category",
+          "name": "模块导入PYODIDE",
+          "custom": "IMPORT_PYODIDE"
+        },
+        {
+          "kind": "category",
+          "name": "输入输出",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "raw_input"
+            },
+            {
+              "kind": "block",
+              "type": "int_input"
+            },
+            {
+              "kind": "block",
+              "type": "input_with_info"
+            },
+            {
+              "kind": "block",
+              "type": "print"
+            },
+            {
+              "kind": "block",
+              "type": "print_end_with"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "数据类型",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "ast_NameConstantBoolean"
+            },
+            {
+              "kind": "block",
+              "type": "ast_number"
+            },
+            {
+              "kind": "block",
+              "type": "ast_NameConstantNone"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str_multiline"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str_docstring"
+            },
+            {
+              "kind": "block",
+              "type": "ast_text_join"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str_char"
+            },
+            {
+              "kind": "block",
+              "type": "ast_list"
+            },
+            {
+              "kind": "block",
+              "type": "list_append"
+            },
+            {
+              "kind": "block",
+              "type": "list_extend"
+            },
+            {
+              "kind": "block",
+              "type": "list_clear"
+            },
+            {
+              "kind": "block",
+              "type": "ast_tuple"
+            },
+            {
+              "kind": "block",
+              "type": "ast_set"
+            },
+            {
+              "kind": "block",
+              "type": "set_option"
+            },
+            {
+              "kind": "block",
+              "type": "ast_dict"
+            },
+            {
+              "kind": "block",
+              "type": "ast_dict_with_item"
+            },
+            {
+              "kind": "block",
+              "type": "dict_option"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "基础 python 块",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "ast_assert"
+            },
+            {
+              "kind": "block",
+              "type": "ast_assign"
+            },
+            {
+              "kind": "block",
+              "type": "ast_bin_op"
+            },
+            {
+              "kind": "block",
+              "type": "ast_bool_op"
+            },
+            {
+              "kind": "block",
+              "type": "ast_break"
+            },
+            {
+              "kind": "block",
+              "type": "ast_class_def"
+            },
+            {
+              "kind": "block",
+              "type": "ast_compare"
+            },
+            {
+              "kind": "block",
+              "type": "ast_continue"
+            },
+            {
+              "kind": "block",
+              "type": "ast_dict"
+            },
+            {
+              "kind": "block",
+              "type": "ast_dict_with_item"
+            },
+            {
+              "kind": "block",
+              "type": "dict_option"
+            },
+            {
+              "kind": "block",
+              "type": "ast_expr"
+            },
+            {
+              "kind": "block",
+              "type": "ast_for_stmt"
+            },
+            {
+              "kind": "block",
+              "type": "ast_function_def"
+            },
+            {
+              "kind": "block",
+              "type": "ast_if"
+            },
+            {
+              "kind": "block",
+              "type": "ast_import_content"
+            },
+            {
+              "kind": "block",
+              "type": "ast_import"
+            },
+            {
+              "kind": "block",
+              "type": "ast_import_content"
+            },
+            {
+              "kind": "block",
+              "type": "ast_list"
+            },
+            {
+              "kind": "block",
+              "type": "list_append"
+            },
+            {
+              "kind": "block",
+              "type": "list_extend"
+            },
+            {
+              "kind": "block",
+              "type": "list_clear"
+            },
+            {
+              "kind": "block",
+              "type": "ast_NameConstantBoolean"
+            },
+            {
+              "kind": "block",
+              "type": "ast_NameConstantNone"
+            },
+            {
+              "kind": "block",
+              "type": "ast_nonlocal"
+            },
+            {
+              "kind": "block",
+              "type": "ast_number"
+            },
+            {
+              "kind": "block",
+              "type": "ast_pass"
+            },
+            {
+              "kind": "block",
+              "type": "ast_raw"
+            },
+            {
+              "kind": "block",
+              "type": "ast_return"
+            },
+            {
+              "kind": "block",
+              "type": "ast_return_full"
+            },
+            {
+              "kind": "block",
+              "type": "ast_set"
+            },
+            {
+              "kind": "block",
+              "type": "set_option"
+            },
+            {
+              "kind": "block",
+              "type": "ast_starred"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str"
+            },
+            {
+              "kind": "block",
+              "type": "ast_image"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str_multiline"
+            },
+            {
+              "kind": "block",
+              "type": "ast_str_docstring"
+            },
+            {
+              "kind": "block",
+              "type": "ast_sub_script"
+            },
+            {
+              "kind": "block",
+              "type": "ast_text_join"
+            },
+            {
+              "kind": "block",
+              "type": "ast_try"
+            },
+            {
+              "kind": "block",
+              "type": "ast_tuple"
+            },
+            {
+              "kind": "block",
+              "type": "ast_unary_op_uadd"
+            },
+            {
+              "kind": "block",
+              "type": "ast_unary_op_usub"
+            },
+            {
+              "kind": "block",
+              "type": "ast_unary_op_not"
+            },
+            {
+              "kind": "block",
+              "type": "ast_unary_op_invert"
+            },
+            {
+              "kind": "block",
+              "type": "ast_while"
+            },
+            {
+              "kind": "block",
+              "type": "ast_with"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "基础 python 函数",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "id"
+            },
+            {
+              "kind": "sep",
+              "cssConfig": {
+                "container": "yourClassName"
+              }
+            },
+            {
+              "kind": "block",
+              "type": "get_id"
+            },
+            {
+              "kind": "block",
+              "type": "get_type"
+            },
+            {
+              "kind": "block",
+              "type": "type"
+            },
+            {
+              "kind": "block",
+              "type": "print_end_with"
+            },
+            {
+              "kind": "block",
+              "type": "print"
+            },
+            {
+              "kind": "block",
+              "type": "raw_input"
+            },
+            {
+              "kind": "block",
+              "type": "int_input"
+            },
+            {
+              "kind": "block",
+              "type": "input_with_info"
+            },
+            {
+              "kind": "block",
+              "type": "int"
+            },
+            {
+              "kind": "block",
+              "type": "str"
+            },
+            {
+              "kind": "block",
+              "type": "range_simply"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "变量",
+          "custom": "VARIABLE"
+        },
+        {
+          "kind": "category",
+          "name": "自定义函数",
+          "custom": "PROCEDURE"
+        }
+      ]
+    }
+  ]
+}
