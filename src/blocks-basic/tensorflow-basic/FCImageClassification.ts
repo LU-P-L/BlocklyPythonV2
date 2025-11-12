@@ -23,7 +23,7 @@ export function addFCImageClassificationBlocks(
     "message0": "（分类）选择训练数据集（图像） %1",
     "args0": [
       {
-        "type": "input_statement",
+        "type": "input_dummy",
         "name": "dataset"
       }
     ],
@@ -230,7 +230,7 @@ print(f"类别数量: {num_classes}")
   "message0": "（分类）选择测试数据集（图像） %1",
   "args0": [
     {
-      "type": "input_statement",
+      "type": "input_dummy",
       "name": "dataset"
     }
   ],

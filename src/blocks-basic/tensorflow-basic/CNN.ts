@@ -22,7 +22,7 @@ export function addCNNBlocksV2(blocks: typeof TmpBlockly.Blocks, pythonGenerator
         "message0": "（分类）选择训练数据集（图像） %1",
         "args0": [
             {
-                "type": "input_statement",
+                "type": "input_dummy",
                 "name": "dataset"
             }
         ],
@@ -128,7 +128,7 @@ train_data_augmentation = {
         "message0": "（分类）选择测试数据集（图像） %1",
         "args0": [
             {
-                "type": "input_statement",
+                "type": "input_dummy",
                 "name": "dataset"
             }
         ],
