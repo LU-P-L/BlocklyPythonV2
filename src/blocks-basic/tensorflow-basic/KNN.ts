@@ -210,7 +210,7 @@ print(f"测试数据形状: {X_test.shape} 成功创建测试数据张量")
     }]);
 
     pythonGenerator.forBlock['knn_set_train_images'] = function (block, generator) {
-        generator.addPyodidePreRunCode('knn_set_train_images', `
+    generator.addPyodidePreRunCode('knn_set_train_images', `
 import pandas as pd
 import numpy as np
 import os
@@ -313,7 +313,7 @@ def load_train_image_from_dir(train_images_dir):
                 labels.append(class_idx)
         
         print(f"类别 '{class_name}' (索引 {class_idx}): 找到 {len([p for p in image_paths if labels[image_paths.index(p)] == class_idx])} 张图片")
-    return image_paths,labels,class_to_idx,idx_to_class,num_classes
+    return image_paths, labels, class_to_idx, idx_to_class, num_classes, class_dirs
 
 async def get_model(model_type):
     MOBILENET_V1_URL = 'https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_0.25_224/model.json'
@@ -327,14 +327,11 @@ async def get_model(model_type):
     return model
         `);
 
+    // Get model type for feature extraction
+    const modelValue = pythonGenerator.valueToCode(block, 'model_type', Order.ATOMIC);
+    const modelType = modelValue.replace(/'/g, '') || "mobilenet"; // Default to MobileNet if not specified
 
-
-
-        // Get model type for feature extraction
-        const modelValue = pythonGenerator.valueToCode(block, 'model_type', Order.ATOMIC);
-        const modelType = modelValue.replace(/'/g, '') || "mobilenet"; // Default to MobileNet if not specified
-
-        let ret = `# 导入必要的库
+    let ret = `# 导入必要的库
 import pandas as pd
 import numpy as np
 import os
@@ -352,7 +349,7 @@ from scipy import ndimage
 data_type = "image"
 # 定义训练图像目录
 train_images_dir = "/data/mount/knn/train_images"
-image_paths,labels,class_to_idx,idx_to_class,num_classes = load_train_image_from_dir(train_images_dir)
+image_paths, labels, class_to_idx, idx_to_class, num_classes, class_dirs = load_train_image_from_dir(train_images_dir)
 print("开始处理训练图像并提取特征...")
 # 图像预处理函数
 def preprocess_image(img_path):
@@ -394,8 +391,8 @@ X_train_tensor = tf.tensor(to_js(X_train_scaled.tolist()))
 y_train_tensor = tf.tensor(to_js(y_train.tolist()))
 print(f"训练数据形状: {X_train_scaled.shape} 成功创建特征和标签张量")`;
 
-        return ret;
-    };
+    return ret;
+};
 
     // KNN 图像测试数据集区块
     Blockly.defineBlocksWithJsonArray([{
@@ -414,36 +411,53 @@ print(f"训练数据形状: {X_train_scaled.shape} 成功创建特征和标签�
     }]);
 
     pythonGenerator.forBlock['knn_set_test_images'] = function (block, generator) {
-        generator.addPyodidePreRunCode('knn_set_test_images', `
-def load_test_image_from_dir(test_images_dir):
+    generator.addPyodidePreRunCode('knn_set_test_images', `
+def load_test_image_from_dir(test_images_dir, class_dirs):
     # 检查目录是否存在
     if not os.path.exists(test_images_dir):
         raise Exception(f"测试图像目录 {test_images_dir} 不存在")
 
-    # 收集所有测试图像路径
+    # 检查是否有类别文件夹结构
+    test_has_subdirs = len([d for d in os.listdir(test_images_dir) if os.path.isdir(os.path.join(test_images_dir, d))]) > 0
+    
     image_paths = []
     image_ids = []
+    test_labels = []
+    test_label_indices = []
 
-    # 支持的图像格式
-    i = 0
-    for img_ext in ['*.jpg', '*.jpeg', '*.png']:
-        for img_path in glob.glob(os.path.join(test_images_dir, img_ext)):
-            image_paths.append(img_path)
-            image_ids.append(os.path.basename(img_path))
-        i += 1
+    if test_has_subdirs:
+        print("测试数据集有分类子目录结构，将用于模型评估")
+        # 有类别文件夹结构，可以获取真实标签
+        for class_idx, class_name in enumerate(class_dirs):
+            class_dir = os.path.join(test_images_dir, class_name)
+            if os.path.exists(class_dir):
+                for img_ext in ['*.jpg', '*.jpeg', '*.png']:
+                    for img_path in glob.glob(os.path.join(class_dir, img_ext)):
+                        image_paths.append(img_path)
+                        image_ids.append(os.path.join(class_name, os.path.basename(img_path)))
+                        test_labels.append(class_name)
+                        test_label_indices.append(class_idx)
+    else:
+        print("测试数据集使用单一目录结构，仅进行预测")
+        # 单一目录结构，没有真实标签
+        for img_ext in ['*.jpg', '*.jpeg', '*.png']:
+            for img_path in glob.glob(os.path.join(test_images_dir, img_ext)):
+                image_paths.append(img_path)
+                image_ids.append(os.path.basename(img_path))
 
     if not image_paths:
         raise Exception(f"在 {test_images_dir} 中没有找到任何图像")
 
     print(f"找到 {len(image_paths)} 张测试图像")
-
-    return image_paths,image_ids
+    
+    return image_paths, image_ids, test_has_subdirs, test_labels, test_label_indices
         `);
 
         return `
 # 定义测试图像目录
 test_images_dir = "/data/mount/knn/test_images"
-image_paths,image_ids = load_test_image_from_dir(test_images_dir)
+image_paths, image_ids, test_has_subdirs, test_labels, test_label_indices = load_test_image_from_dir(test_images_dir, class_dirs)
+
 # 提取测试图像的特征向量
 X_test = []
 batch_size = 16
@@ -472,8 +486,18 @@ X_test_tensor = tf.tensor(to_js(X_test_scaled.tolist()))
 print(f"测试数据形状: {X_test_scaled.shape} 成功创建测试数据张量")
 # 保存ID信息用于结果输出
 id_column = image_ids
+
+# 如果有真实标签，准备用于评估
+if test_has_subdirs and test_label_indices:
+    y_test = np.array(test_label_indices).astype(np.int32)
+    print(f"测试标签形状: {y_test.shape}")
+    print("测试数据集包含真实标签，将进行模型评估")
+else:
+    y_test = None
+    print("测试数据集没有真实标签，仅进行预测")
 `;
-    };
+};
+
 
     // 模型类型选择块
     Blockly.defineBlocksWithJsonArray([{
@@ -547,8 +571,37 @@ print(f"设置KNN参数: k={k}, 距离度量={distance_metric}")`;
 
 
     pythonGenerator.forBlock['fit_knn_classifier'] = function (block, generator) {
-        generator.addPyodidePreRunCode('fit_knn_classifier', `
-def save_csv_results(output_file, id_column, y_pred, data_type, idx_to_class=None):
+    generator.addPyodidePreRunCode('fit_knn_classifier', `
+def calculate_simple_metrics(y_true, y_pred):
+    """计算四个核心指标：准确率、精确率、召回率、F1-Score"""
+    from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+    import json
+    
+    metrics = {}
+    
+    # 准确率
+    metrics['accuracy'] = accuracy_score(y_true, y_pred)
+    
+    # 处理二分类和多分类的指标计算
+    average = 'binary' if len(np.unique(y_true)) == 2 else 'weighted'
+    
+    # 精确率、召回率、F1-Score
+    metrics['precision'] = precision_score(y_true, y_pred, average=average, zero_division=0)
+    metrics['recall'] = recall_score(y_true, y_pred, average=average, zero_division=0)
+    metrics['f1_score'] = f1_score(y_true, y_pred, average=average, zero_division=0)
+    
+    return metrics
+
+def print_simple_metrics(metrics):
+    """输出四个核心指标"""
+    print("\\n===== KNN模型性能指标 =====")
+    print(f"准确率 (Accuracy): {metrics['accuracy']:.4f}")
+    print(f"精确率 (Precision): {metrics['precision']:.4f}")
+    print(f"召回率 (Recall): {metrics['recall']:.4f}")
+    print(f"F1-Score: {metrics['f1_score']:.4f}")
+    print("==========================\\n")
+
+def save_csv_results(output_file, id_column, y_pred, data_type, idx_to_class=None, y_true=None):
     import pandas as pd
     if data_type == "csv":
         # CSV 数据预测结果
@@ -556,6 +609,9 @@ def save_csv_results(output_file, id_column, y_pred, data_type, idx_to_class=Non
             'id': id_column,
             'predicted_label': y_pred
         })
+        if y_true is not None:
+            results_df['true_label'] = y_true
+            results_df['correct'] = results_df['true_label'] == results_df['predicted_label']
         results_df.to_csv(output_file, index=False)
         print(f"预测结果已保存至: {output_file}")
     elif data_type == "image":
@@ -567,11 +623,21 @@ def save_csv_results(output_file, id_column, y_pred, data_type, idx_to_class=Non
             pred_idx = y_pred[i]
             pred_class = idx_to_class.get(pred_idx, f"未知类别_{pred_idx}")
             
-            results.append({
+            result = {
                 'image_id': image_id,
                 'predicted_class': pred_class,
                 'predicted_idx': int(pred_idx)
-            })
+            }
+            
+            # 如果有真实标签，添加真实类别信息
+            if y_true is not None:
+                true_idx = y_true[i]
+                true_class = idx_to_class.get(true_idx, f"未知类别_{true_idx}")
+                result['true_class'] = true_class
+                result['true_idx'] = int(true_idx)
+                result['correct'] = (pred_idx == true_idx)
+            
+            results.append(result)
         
         # 创建结果DataFrame
         results_df = pd.DataFrame(results)
@@ -580,7 +646,12 @@ def save_csv_results(output_file, id_column, y_pred, data_type, idx_to_class=Non
         print(f"预测结果已保存至: {output_file}")
         print("\\n预测结果示例:")
         for i in range(min(5, len(results))):
-            print(f"图像: {results[i]['image_id']}, 预测类别: {results[i]['predicted_class']}")
+            result = results[i]
+            if 'true_class' in result:
+                correct_str = "✓" if result['correct'] else "✗"
+                print(f"{correct_str} 图像: {result['image_id']}, 预测: {result['predicted_class']}, 真实: {result['true_class']}")
+            else:
+                print(f"图像: {result['image_id']}, 预测类别: {result['predicted_class']}")
 
 def calculate_distances(X_train_tensor, diff, distance_metric):
     if distance_metric == "euclidean":
@@ -601,6 +672,7 @@ def calculate_distances(X_train_tensor, diff, distance_metric):
 
     return distances
         `);
+        
         return `# 进行预测
 output_dir = "/data/mount/knn/output"
 os.makedirs(output_dir, exist_ok=True)
@@ -629,7 +701,28 @@ for i in range(len(X_test_scaled)):
     # 找出出现最多的标签
     predicted_label = max(label_counts.items(), key=lambda x: x[1])[0]
     y_pred.append(int(predicted_label))
-# 调用保存函数
-save_csv_results(output_file, id_column, y_pred, data_type, idx_to_class if data_type == "image" else None)`;
-    }
+
+# 模型评估（仅当有真实标签时）
+if data_type == "image" and y_test is not None:
+    print("开始KNN模型评估...")
+    # 计算四个核心指标
+    metrics = calculate_simple_metrics(y_test, y_pred)
+    
+    # 输出指标
+    print_simple_metrics(metrics)
+    
+    # 保存指标到文件
+    metrics_path = os.path.join(output_dir, "knn_classification_metrics.json")
+    with open(metrics_path, "w") as f:
+        json.dump(metrics, f, indent=2)
+    print(f"KNN模型指标已保存至: {metrics_path}")
+    
+    # 保存包含真实标签的预测结果
+    save_csv_results(output_file, id_column, y_pred, data_type, idx_to_class, y_test)
+else:
+    # 保存不包含真实标签的预测结果
+    save_csv_results(output_file, id_column, y_pred, data_type, idx_to_class if data_type == "image" else None)
+
+print("KNN预测完成")`;
+};
 }

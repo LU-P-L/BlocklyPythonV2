@@ -156,7 +156,8 @@ def prepare_test_data(test_dir, train_dir, class_dirs, img_width, img_height):
         class_dir = os.path.join(train_dir, class_name)
         for ext in ['*.jpg', '*.jpeg', '*.png']:
             for img_path in glob.glob(os.path.join(class_dir, ext)):
-                img = Image.open(img_path).resize((img_width, img_height))
+                img = Image.open(img_path).convert('RGB')
+                img = img.resize((img_width, img_height))
                 img_array = np.array(img) / 255.0
                 train_images.append(img_array)
                 train_labels.append(class_name)
@@ -190,7 +191,8 @@ def collect_test_data(test_dir, class_dirs, img_width, img_height, test_has_subd
             if os.path.exists(class_dir):
                 for ext in ['*.jpg', '*.jpeg', '*.png']:
                     for img_path in glob.glob(os.path.join(class_dir, ext)):
-                        img = Image.open(img_path).resize((img_width, img_height))
+                        img = Image.open(img_path).convert('RGB')
+                        img = img.resize((img_width, img_height))
                         img_array = np.array(img) / 255.0
                         test_images.append(img_array)
                         test_labels.append(class_name)
@@ -199,7 +201,8 @@ def collect_test_data(test_dir, class_dirs, img_width, img_height, test_has_subd
     else:
         for ext in ['*.jpg', '*.jpeg', '*.png']:
             for img_path in glob.glob(os.path.join(test_dir, ext)):
-                img = Image.open(img_path).resize((img_width, img_height))
+                img = Image.open(img_path).convert('RGB')
+                img = img.resize((img_width, img_height))
                 img_array = np.array(img) / 255.0
                 test_images.append(img_array)
                 test_filenames.append(os.path.basename(img_path))
@@ -427,23 +430,53 @@ except Exception as e:
     };
 
     // Use model block
-    Blockly.defineBlocksWithJsonArray([{
-        "type": "use_model_img",
-        "tooltip": "",
-        "helpUrl": "",
-        "message0": "（分类）测试模型并输出结果 %1",
-        "args0": [
-            {
-                "type": "input_end_row",
-                "name": "test_dataset"
-            }
-        ],
-        "previousStatement": null,
-        "colour": CNN_COLOR
-    }]);
+    // Use model block - 简化版本，只输出四个核心指标
+Blockly.defineBlocksWithJsonArray([{
+    "type": "use_model_img",
+    "tooltip": "",
+    "helpUrl": "",
+    "message0": "（分类）测试模型并输出结果 %1",
+    "args0": [
+        {
+            "type": "input_end_row",
+            "name": "test_dataset"
+        }
+    ],
+    "previousStatement": null,
+    "colour": CNN_COLOR
+}]);
 
-    pythonGenerator.forBlock['use_model_img'] = function (block) {
-        pythonGenerator.addPyodidePreRunCode('cnn_predict_utils', `
+pythonGenerator.forBlock['use_model_img'] = function (block) {
+    pythonGenerator.addPyodidePreRunCode('cnn_predict_utils', `
+def calculate_simple_metrics(y_true, y_pred):
+    """只计算四个核心指标：准确率、精确率、召回率、F1-Score"""
+    from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+    import json
+    
+    metrics = {}
+    
+    # 准确率
+    metrics['accuracy'] = accuracy_score(y_true, y_pred)
+    
+    # 处理二分类和多分类的指标计算
+    average = 'binary' if len(np.unique(y_true)) == 2 else 'weighted'
+    
+    # 精确率、召回率、F1-Score
+    metrics['precision'] = precision_score(y_true, y_pred, average=average, zero_division=0)
+    metrics['recall'] = recall_score(y_true, y_pred, average=average, zero_division=0)
+    metrics['f1_score'] = f1_score(y_true, y_pred, average=average, zero_division=0)
+    
+    return metrics
+
+def print_simple_metrics(metrics):
+    """只输出四个核心指标"""
+    print("\\n===== CNN模型性能指标 =====")
+    print(f"准确率 (Accuracy): {metrics['accuracy']:.4f}")
+    print(f"精确率 (Precision): {metrics['precision']:.4f}")
+    print(f"召回率 (Recall): {metrics['recall']:.4f}")
+    print(f"F1-Score: {metrics['f1_score']:.4f}")
+    print("==========================\\n")
+
 def save_predictions(predictions, test_filenames, idx_to_class, test_has_subdirs, test_label_indices, output_dir):
     predicted_classes = np.argmax(predictions, axis=1)
     
@@ -465,20 +498,31 @@ def save_predictions(predictions, test_filenames, idx_to_class, test_has_subdirs
     print(f"预测结果已保存至: {results_path}")
 `);
 
-        return `
+    return `
 # 测试模型并输出结果
 try:
     print("开始评估模型...")
     
-    if test_has_subdirs:
-        # 评估模型性能
-        eval_result = model.evaluate(test_images_tensor, test_labels_tensor)
-        test_loss = eval_result[0].arraySync()
-        test_acc = eval_result[1].arraySync()
-        print(f'测试损失: {test_loss:.4f}, 测试准确率: {test_acc:.4f}')
-    
     # 获取预测结果
     predictions = model.predict(test_images_tensor).arraySync()
+    predicted_classes = np.argmax(predictions, axis=1)
+    
+    if test_has_subdirs and test_label_indices is not None:
+        # 只计算四个核心指标，避免复杂的回调函数
+        y_true = test_label_indices
+        y_pred = predicted_classes
+        
+        # 计算指标
+        metrics = calculate_simple_metrics(y_true, y_pred)
+        
+        # 输出指标
+        print_simple_metrics(metrics)
+        
+        # 保存指标到文件
+        metrics_path = os.path.join(output_dir, "cnn_simple_metrics.json")
+        with open(metrics_path, "w") as f:
+            json.dump(metrics, f, indent=2)
+        print(f"指标已保存至: {metrics_path}")
     
     # 保存预测结果
     save_predictions(predictions, test_filenames, idx_to_class, test_has_subdirs, test_label_indices, output_dir)
@@ -486,5 +530,5 @@ try:
 except Exception as e:
     print(f"评估模型时出错: {e}")
     raise e`;
-    };
+};
 }

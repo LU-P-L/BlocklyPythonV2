@@ -1548,55 +1548,418 @@
             }
           ]
         },
-        {
+                {
           "kind": "category",
-          "name": "分类相关",
+          "name": "全连接神经网络",
           "contents": [
             {
-              "kind": "block",
-              "type": "set_train_dataset_img"
+              "kind": "category",
+              "name": "图像分类",
+              "contents": [
+                {
+                  "kind": "block",
+                  "type": "fc_set_train_dataset_img"
+                },
+                {
+                  "kind": "block",
+                  "type": "fc_set_test_dataset_img"
+                },
+                {
+                  "kind": "block",
+                  "type": "fc_create_model_img"
+                },
+                {
+                  "kind": "block",
+                  "type": "fc_dense_layer_img"
+                },
+                {
+                  "kind": "block",
+                  "type": "fc_train_model_img"
+                },
+                {
+                  "kind": "block",
+                  "type": "fc_evaluate_and_predict_img"
+                }
+              ]
             },
             {
-              "kind": "block",
-              "type": "set_test_dataset_img"
+              "kind": "category",
+              "name": "csv 回归",
+              "contents": [
+                {
+                  "kind": "block",
+                  "type": "set_train_dataset"
+                },
+                {
+                  "kind": "block",
+                  "type": "set_test_dataset"
+                },
+                {
+                  "kind": "block",
+                  "type": "create_model"
+                },
+                {
+                  "kind": "block",
+                  "type": "train_model"
+                },
+                {
+                  "kind": "block",
+                  "type": "use_model"
+                }
+              ]
             },
             {
-              "kind": "block",
-              "type": "create_model"
-            },
-            {
-              "kind": "block",
-              "type": "train_model_img"
-            },
-            {
-              "kind": "block",
-              "type": "use_model_img"
+              "kind": "category",
+              "name": "房价案例",
+              "contents": [
+                {
+                  "kind": "block",
+                  "type": "set_train_dataset",
+                  "next": {
+                    "block": {
+                      "type": "set_test_dataset",
+                      "next": {
+                        "block": {
+                          "type": "create_model",
+                          "inputs": {
+                            "layers": {
+                              "block": {
+                                "type": "layer",
+                                "inputs": {
+                                  "nural_count": {
+                                    "block": {
+                                      "type": "ast_number",
+                                      "fields": {
+                                        "Number": 20
+                                      }
+                                    }
+                                  },
+                                  "activate_fn": {
+                                    "block": {
+                                      "type": "activate_function"
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "layer",
+                                    "inputs": {
+                                      "nural_count": {
+                                        "block": {
+                                          "type": "ast_number",
+                                          "fields": {
+                                            "Number": 1
+                                          }
+                                        }
+                                      },
+                                      "activate_fn": {
+                                        "block": {
+                                          "type": "activate_function"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "loss": {
+                              "block": {
+                                "type": "mse"
+                              }
+                            },
+                            "batch": {
+                              "block": {
+                                "type": "ast_number",
+                                "fields": {
+                                  "Number": 32
+                                }
+                              }
+                            },
+                            "epoch": {
+                              "block": {
+                                "type": "ast_number",
+                                "fields": {
+                                  "Number": 50
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "train_model",
+                              "next": {
+                                "block": {
+                                  "type": "use_model"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
             }
           ]
         },
         {
           "kind": "category",
-          "name": "回归相关",
+          "name": "卷积神经网络",
           "contents": [
             {
-              "kind": "block",
-              "type": "set_train_dataset"
+              "kind": "category",
+              "name": "图像分类",
+              "contents": [
+                {
+                  "kind": "block",
+                  "type": "set_train_dataset_img"
+                },
+                {
+                  "kind": "block",
+                  "type": "set_test_dataset_img"
+                },
+                {
+                  "kind": "block",
+                  "type": "create_model"
+                },
+                {
+                  "kind": "block",
+                  "type": "train_model_img"
+                },
+                {
+                  "kind": "block",
+                  "type": "use_model_img"
+                }
+              ]
             },
             {
-              "kind": "block",
-              "type": "set_test_dataset"
-            },
-            {
-              "kind": "block",
-              "type": "create_model"
-            },
-            {
-              "kind": "block",
-              "type": "train_model"
-            },
-            {
-              "kind": "block",
-              "type": "use_model"
+              "kind": "category",
+              "name": "CNN案例",
+              "contents": [
+                {
+                  "kind": "block",
+                  "type": "set_train_dataset_img",
+                  "next": {
+                    "block": {
+                      "type": "set_test_dataset_img",
+                      "next": {
+                        "block": {
+                          "type": "create_model_img",
+                          "inputs": {
+                            "layers": {
+                              "block": {
+                                "type": "conv2d_layer",
+                                "inputs": {
+                                  "kernel_size": {
+                                    "block": {
+                                      "type": "ast_number",
+                                      "fields": {
+                                        "Number": 3
+                                      }
+                                    }
+                                  },
+                                  "filters": {
+                                    "block": {
+                                      "type": "ast_number",
+                                      "fields": {
+                                        "Number": 32
+                                      }
+                                    }
+                                  },
+                                  "strides": {
+                                    "block": {
+                                      "type": "ast_number",
+                                      "fields": {
+                                        "Number": 1
+                                      }
+                                    }
+                                  },
+                                  "activate_fn": {
+                                    "block": {
+                                      "type": "activate_function",
+                                      "fields": {
+                                        "TEXT": "relu"
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "max_pooling2d_layer",
+                                    "inputs": {
+                                      "pool_size": {
+                                        "block": {
+                                          "type": "ast_number",
+                                          "fields": {
+                                            "Number": 2
+                                          }
+                                        }
+                                      },
+                                      "strides": {
+                                        "block": {
+                                          "type": "ast_number",
+                                          "fields": {
+                                            "Number": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "next": {
+                                      "block": {
+                                        "type": "conv2d_layer",
+                                        "inputs": {
+                                          "kernel_size": {
+                                            "block": {
+                                              "type": "ast_number",
+                                              "fields": {
+                                                "Number": 3
+                                              }
+                                            }
+                                          },
+                                          "filters": {
+                                            "block": {
+                                              "type": "ast_number",
+                                              "fields": {
+                                                "Number": 64
+                                              }
+                                            }
+                                          },
+                                          "strides": {
+                                            "block": {
+                                              "type": "ast_number",
+                                              "fields": {
+                                                "Number": 1
+                                              }
+                                            }
+                                          },
+                                          "activate_fn": {
+                                            "block": {
+                                              "type": "activate_function",
+                                              "fields": {
+                                                "TEXT": "relu"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "next": {
+                                          "block": {
+                                            "type": "max_pooling2d_layer",
+                                            "inputs": {
+                                              "pool_size": {
+                                                "block": {
+                                                  "type": "ast_number",
+                                                  "fields": {
+                                                    "Number": 2
+                                                  }
+                                                }
+                                              },
+                                              "strides": {
+                                                "block": {
+                                                  "type": "ast_number",
+                                                  "fields": {
+                                                    "Number": 2
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "next": {
+                                              "block": {
+                                                "type": "flatten_layer",
+                                                "next": {
+                                                  "block": {
+                                                    "type": "layer",
+                                                    "inputs": {
+                                                      "nural_count": {
+                                                        "block": {
+                                                          "type": "ast_number",
+                                                          "fields": {
+                                                            "Number": 64
+                                                          }
+                                                        }
+                                                      },
+                                                      "activate_fn": {
+                                                        "block": {
+                                                          "type": "activate_function",
+                                                          "fields": {
+                                                            "TEXT": "relu"
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "next": {
+                                                      "block": {
+                                                        "type": "layer",
+                                                        "inputs": {
+                                                          "nural_count": {
+                                                            "block": {
+                                                              "type": "ast_number",
+                                                              "fields": {
+                                                                "Number": 2
+                                                              }
+                                                            }
+                                                          },
+                                                          "activate_fn": {
+                                                            "block": {
+                                                              "type": "activate_function",
+                                                              "fields": {
+                                                                "options": "softmax"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "loss": {
+                              "block": {
+                                "type": "categorical_crossentropy"
+                              }
+                            },
+                            "batch": {
+                              "block": {
+                                "type": "ast_number",
+                                "fields": {
+                                  "Number": 128
+                                }
+                              }
+                            },
+                            "epoch": {
+                              "block": {
+                                "type": "ast_number",
+                                "fields": {
+                                  "Number": 10
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "train_model_img",
+                              "next": {
+                                "block": {
+                                  "type": "use_model_img"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
             }
           ]
         },
@@ -1677,333 +2040,6 @@
             {
               "kind": "block",
               "type": "lstm_use_model"
-            }
-          ]
-
-        },
-        {
-          "kind": "category",
-          "name": "房价案例",
-          "contents": [
-            {
-              "kind": "block",
-              "type": "set_train_dataset",
-              "next": {
-                "block": {
-                  "type": "set_test_dataset",
-                  
-                  "next": {
-                    "block": {
-                      "type": "create_model",
-                      "inputs": {
-                        "layers": {
-                          "block": {
-                            "type": "layer",
-                            "inputs": {
-                              "nural_count": {
-                                "block": {
-                                  "type": "ast_number",
-                                  "fields":{
-                                    "Number": 20
-                                  }
-                                }
-                              },
-                              "activate_fn": {
-                                "block": {
-                                  "type": "activate_function"
-                                }
-                              }
-                            },
-                            "next": {
-                              "block": {
-                                "type": "layer",
-                                "inputs": {
-                                  "nural_count": {
-                                    "block": {
-                                      "type": "ast_number",
-                                      "fields": {
-                                        "Number": 1
-                                      }
-                                    }
-                                  },
-                                  "activate_fn": {
-                                    "block": {
-                                      "type": "activate_function"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "loss": {
-                          "block": {
-                            "type": "mse"
-                          }
-                        },
-                        "batch": {
-                          "block": {
-                            "type": "ast_number",
-                            "fields": {
-                              "Number": 32
-                            }
-                          }
-                        },
-                        "epoch": {
-                          "block": {
-                            "type": "ast_number",
-                            "fields": {
-                              "Number": 50
-                            }
-                          }
-                        }
-                      },
-                      "next": {
-                        "block": { 
-                          "type": "train_model",
-                          "next": {
-                            "block": {
-                              "type": "use_model"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        {
-          "kind": "category",
-          "name": "CNN案例",
-          "contents": [
-            {
-              "kind": "block",
-              "type": "set_train_dataset_img",
-              "next": {
-                "block": {
-                  "type": "set_test_dataset_img",
-                  
-                  "next": {
-                    "block": {
-                      "type": "create_model_img",
-                      "inputs": {
-                        "layers": {
-                          "block": {
-                            "type": "conv2d_layer",
-                            "inputs": {
-                              "kernel_size": {
-                                "block": {
-                                  "type": "ast_number",
-                                  "fields": {
-                                    "Number": 3
-                                  }
-                                }
-                              },
-                              "filters": {
-                                "block": {
-                                  "type": "ast_number",
-                                  "fields": {
-                                    "Number": 32
-                                  }
-                                }
-                              },
-                              "strides": {
-                                "block": {
-                                  "type": "ast_number",
-                                  "fields": {
-                                    "Number": 1
-                                  }
-                                }
-                              },
-                              "activate_fn": {
-                                "block": {
-                                  "type": "activate_function",
-                                  "fields": {
-                                    "TEXT": "relu"
-                                  }
-                                }
-                              }
-                            },
-                            "next": {
-                              "block": {
-                                "type": "max_pooling2d_layer",
-                                "inputs": {
-                                  "pool_size": {
-                                    "block": {
-                                      "type": "ast_number",
-                                      "fields": {
-                                        "Number": 2
-                                      }
-                                  
-                                    }
-                                  },
-                                  "strides": {
-                                    "block": {
-                                      "type": "ast_number",
-                                      "fields": {
-                                        "Number": 2
-                                      }
-                                    }
-                                  }
-                                },
-                                "next": {
-                                  "block": {
-                                    "type": "conv2d_layer",
-                                    "inputs": {
-                                      "kernel_size": {
-                                        "block": {
-                                          "type": "ast_number",
-                                          "fields": {
-                                            "Number": 3
-                                          }
-                                        }
-                                      },
-                                      "filters": {
-                                        "block": {
-                                          "type": "ast_number",
-                                          "fields": {
-                                            "Number": 64
-                                          }
-                                        }
-                                      },
-                                      "strides": {
-                                        "block": {
-                                          "type": "ast_number",
-                                          "fields": {
-                                            "Number": 1
-                                          }
-                                        }
-                                      },
-                                      "activate_fn": {
-                                        "block": {
-                                          "type": "activate_function",
-                                          "fields": {
-                                            "TEXT": "relu"
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "next": {
-                                      "block": {
-                                        "type": "max_pooling2d_layer",
-                                        "inputs": {
-                                          "pool_size": {
-                                            "block": {
-                                              "type": "ast_number",
-                                              "fields": {
-                                                "Number": 2
-                                              }
-                                            }
-                                          },
-                                          "strides": {
-                                            "block": {
-                                              "type": "ast_number",
-                                              "fields": {
-                                                "Number": 2
-                                              }
-                                            }
-                                          }
-                                        },
-                                        "next": {
-                                          "block": {
-                                            "type": "flatten_layer",
-                                            "next": {
-                                              "block": {
-                                                "type": "layer",
-                                                "inputs": {
-                                                  "nural_count": {
-                                                    "block": {
-                                                      "type": "ast_number",
-                                                      "fields": {
-                                                        "Number": 64
-                                                      }
-                                                    }
-                                                  },
-                                                  "activate_fn": {
-                                                    "block": {
-                                                      "type": "activate_function",
-                                                      "fields": {
-                                                        "TEXT": "relu"
-                                                      }
-                                                    }
-                                                  }
-                                                },
-                                                "next": {
-                                                  "block": {
-                                                    "type": "layer",
-                                                    "inputs": {
-                                                      "nural_count": {
-                                                        "block": {
-                                                          "type": "ast_number",
-                                                          "fields": {
-                                                            "Number": 2
-                                                          }
-                                                        }
-                                                      },
-                                                      "activate_fn": {
-                                                        "block": {
-                                                          "type": "activate_function",
-                                                          "fields": {
-                                                            "options": "softmax"
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                            
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "loss": {
-                          "block": {
-                            "type": "categorical_crossentropy"
-                          }
-                        },
-                        "batch": {
-                          "block": {
-                            "type": "ast_number",
-                            "fields": {
-                              "Number": 128
-                            }
-                          }
-                        },
-                        "epoch": {
-                          "block": {
-                            "type": "ast_number",
-                            "fields": {
-                              "Number": 10
-                            }
-                          }
-                        }
-                      },
-                      "next": {
-                        "block": { 
-                          "type": "train_model_img",
-                          "next": {
-                            "block": {
-                              "type": "use_model_img"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                
-                }
-              }
             }
           ]
         },

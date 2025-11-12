@@ -12,6 +12,7 @@ import {addLayerBlocksV2} from "./Layer";
 import {addLossBlocksV2} from "./Loss";
 import {addRegressionBlocksV2} from "./Regression";
 import {addLSTMBlocksV2} from "./LSTM";
+import {addFCImageClassificationBlocks} from "./FCImageClassification";
 
 // import { addTFLayersFlatten } from "./basic/tf_layers_flatten";
 // import {addTFLayersConv2d} from "@/blocks/tensorflow-basic/convolutional/tf_layers_conv2d";
@@ -55,4 +56,5 @@ export function addTensorflowBasicBlocksV2(blocks: typeof TmpBlockly.Blocks, pyt
     addLossBlocksV2(blocks, pythonGenerator, Blockly, content);
     addRegressionBlocksV2(blocks, pythonGenerator, Blockly, content);
     addLSTMBlocksV2(blocks, pythonGenerator, Blockly, content);
+    addFCImageClassificationBlocks(blocks, pythonGenerator, Blockly, content);
 }
