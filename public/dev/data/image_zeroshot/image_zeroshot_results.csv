@@ -1,0 +1,4 @@
+image_name,label,confidence
+tiger.jpg,tiger,99.97%
+tiger.jpg,dog,0.01%
+tiger.jpg,horse,0.01%

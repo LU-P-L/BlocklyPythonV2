@@ -1,0 +1,7 @@
+Filename,PredictedClass,Confidence
+test1.jpg,dog,1.2476567029953003
+test2.jpg,dog,1.0677859783172607
+test3.jpg,dog,0.3281587064266205
+test4.jpg,dog,1.7918564081192017
+test5.jpg,dog,2.1770081520080566
+test6.jpg,dog,2.4323482513427734

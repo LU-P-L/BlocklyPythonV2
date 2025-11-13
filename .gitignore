@@ -35,6 +35,6 @@ playwright-report/
 public/prod-basic/core/pyodide/
 public/prod-tf/core/pyodide/
 public/prod-tf/data/
-public/dev/pyodide/
-public/dev/data/
+# public/dev/pyodide/
+# public/dev/data/
 交付版本/

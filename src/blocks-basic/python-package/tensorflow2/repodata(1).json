@@ -1,0 +1,11 @@
+{
+  "tensorflow": {
+    "name": "tensorflow",
+    "version": "0.0.1",
+    "file_name": "",
+    "install_dir": "site",
+    "sha256": "",
+    "imports": ["tensorflow"],
+    "depends": []
+  }
+}
